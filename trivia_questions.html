@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>
+                    Who has done the most for black people?
+                </h3>
+                <body>
+                        <!-- Creating buttons -->
+                        <button class = "choices" type = button id = "button"> Jared Kushner </button>
+                        <button class = "choices" type = button id = "button"> Donald Trump </button>
+                        <button class = "choices" type = button id = "button"> Ivanka Trump </button>
+                        <button class = "choices" type = button id = "button"> Harriet Tubman </button>
+
+                    <script>
+                        // Creating a function to hide the text
+                        function hidden()
+                        {
+                            let body = document.querySelector('body');
+                            if (body.style.visibility == 'hidden')
+                            {
+                                body.style.visibility == 'Correct';
+                            }
+                            else 
+                            {
+                                body.style.visibility == 'Incorrect';
+                            }
+                        }
+                        
+                        // Changing the button colour
+                        // Help: https://stackoverflow.com/questions/49942646/nicer-way-to-change-color-of-multiple-buttons
+                        // I think I will need an if function 
+                        if $('button').click(function()){ //if button clicked on is Harriet Tubman, the button should be coloured green
+                            $(this).css("background", "green");
+                        }
+                        else { 
+                            //if the button is != Harriet Tubman, and it is clicked, it should be red
+                        }
+                        $(document).ready(function(){
+                            $('button').click(function(){
+                                $(this).css("background", "green").siblings().css("background", "red");
+                            })
+                        })
+                        
+                        
+                    </script>
+                </body>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3> 
+                    Who is the Cursed Child in Harry Potter: The Cursed Chil?
+                </h3>
+
+                <!-- TODO: Add free response question here -->
+                 <!-- You should use an input field to let the user type a response. -->
+                 <body>
+                    <form>
+                         <input autocomplete = "off" autofocus placeholder = "Please input your answer here" type = "text"> 
+                         <!-- You should use a button to let the user confirm their answer.-->
+                         <button class = "choices" type = button id = "button"> Check Answer </button>
+                     </form>
+                     <script>
+                         
+                     </script>
+                 </body>
+
+            </div>
+
+        </div>
+    </body>
+</html>
