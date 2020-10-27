@@ -7,112 +7,48 @@
         <title>Trivia!</title>
 
         <script>
-
+        
             // TODO: Add code to check answers to questions
-
+            // Documentation: https://www.codemahal.com/video/javascript-quiz-tutorial/
+            <script src="quiz.js">
+                div#test{
+                    border:#5AB029 3px solid;
+                    padding:15px 45px 45px 45px;
+                    background-color: #FCE3E5;
+                    width:55%;
+                    }    
+        
         </script>
 
     </head>
     <body>
 
         <div class="jumbotron">
-            <h1>Trivia!</h1>
+            <h1>Trivia! Night</h1>
         </div>
 
         <div class="container">
 
             <div class="section">
-                <h2>Part 1: Multiple Choice </h2>
+                <h2>Part 1: How bad do you think this can go? </h2>
                 <hr>
 
                 <!-- TODO: Add multiple choice question here -->
-                <h3>
-                    Who has done the most for black people?
-                </h3>
                 <body>
-                        <!-- Creating buttons -->
-                        <button class = "choices" type = button id = "button"> Jared Kushner </button>
-                        <button class = "choices" type = button id = "button"> Donald Trump </button>
-                        <button class = "choices" type = button id = "button"> Ivanka Trump </button>
-                        <button class = "choices" type = button id = "button"> Harriet Tubman </button>
-
-                    <script>
-                        // Creating a function to hide the text
-                        function hidden()
-                        {
-                            let body = document.querySelector('body');
-                            if (body.style.visibility == 'hidden')
-                            {
-                                body.style.visibility == 'Correct';
-                            }
-                            else 
-                            {
-                                body.style.visibility == 'Incorrect';
-                            }
-                        }
-                        
-                        // Changing the button colour
-                        // Help: https://stackoverflow.com/questions/49942646/nicer-way-to-change-color-of-multiple-buttons
-                        // I think I will need an if function 
-                        if $('button').click(function()){ //if button clicked on is Harriet Tubman, the button should be coloured green
-                            $(this).css("background", "green");
-                        }
-                        else { 
-                            //if the button is != Harriet Tubman, and it is clicked, it should be red
-                        }
-                        $(document).ready(function(){
-                            $('button').click(function(){
-                                $(this).css("background", "green").siblings().css("background", "red");
-                            })
-                        })
-                        
-                        
-                    </script>
+                    <h3 id = "mc_test_status"></h3>
+                    <div id = "mc_test"></div>    
                 </body>
 
             </div>
 
             <div class="section">
-                <h2>Part 2: Free Response</h2>
+                <h2>Part 2: Just when you think it can't get any worse</h2>
                 <hr>
-                <h3> 
-                    Who is the Cursed Child in Harry Potter: The Cursed Chil?
-                </h3>
-
                 <!-- TODO: Add free response question here -->
                  <!-- You should use an input field to let the user type a response. -->
                  <body>
-                    <form>
-                         <input autocomplete = "off" autofocus placeholder = "Please input your answer here" type = "text"> 
-                         <!-- You should use a button to let the user confirm their answer.-->
-                         <button class = "choices" type = button id = "button"> Check Answer </button>
-                     </form>
-                     <script>
-                         // This should be the JavaScript section
-                            // Using JavaScript, add logic so that the text field changes color when a user confirms their answer.
-                            // Text field should turn green if it is correct and a text should appear and say that it is correct
-                            // Text field should turn red if it is incorrect and a text should appear and say that it is incorrect
-                     
-                            // Creating a function to hide the text
-                            function hidden()
-                            {
-                                let body = document.querySelector('body');
-                                if (body.style.visibility == 'hidden')
-                                {
-                                    body.style.visibility == 'Correct';
-                                }
-                                else 
-                                {
-                                    body.style.visibility == 'Incorrect';
-                                }
-                            }
-                            
-                            // Function for text changing colour
-                            function colour_change()
-                            {
-                                
-                            }
-                     </script>
+                    <h3 id = "blank_test_status"></h3>
+                    <div id = "blank_test"></div>
                  </body>
 
             </div>
