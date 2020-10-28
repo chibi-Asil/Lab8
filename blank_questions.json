@@ -1,0 +1,19 @@
+// Question list
+{"Question_List": [
+{
+        blank_question: "Monsieur Hood sings, 'I like an honest fight and a saucy little maid.' Merry Men sings, 'What he's basically saying is he likes to get...'",
+        blank_box:" ", 
+        answer: "laid",
+    },
+    {
+        blank_question: "What’s the difference between a Catholic priest and a zit?",
+        blank_box: " ",
+        answer: "A zit will wait until you’re twelve before it comes on your face.",
+    },
+    {
+        blank_question: "Although she lives with seven other men, she is not easy. Who is she?"
+        blank_box: " ",
+        answer: "Snow White",
+    }
+]
+};
