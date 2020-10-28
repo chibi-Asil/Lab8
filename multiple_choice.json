@@ -1,0 +1,48 @@
+// Note: Kept multiple choice questions on by itself
+// Made the multiple choice options its own array to compartmentalize the choices that will be buttons displayed
+
+"mc_questions": [{
+        "id": "1",
+        "question": "On the contest on who has been the worst to black Americans",
+        "answer": "Donald Trump",
+        "multiple_choice" : [
+        "Adolf Hitler",
+        "Ted Bundy",
+        "Donald Trump",
+        "Clementine Barnabet",
+    ]    
+    },
+    {
+    "question" : "When does early voting start in NYS in 2020?",
+    "answer" : "Never. It was suspended because the US now lives in a dictatorship"
+        "id" : "2",    
+        "multiple_choice": [
+        "October 01, 2020",
+        "October 24, 2020",
+        "October 05, 2020",
+        "Never. It was suspended because the US now lives in a dictatorship",
+    ]    
+    },
+    {
+        "question": "On October 26, 2020, NASA released a picture of the moon cracking. What can it be?",
+        "answer": "The Eldrich creatures"
+        "id": "3"
+        "multiple_choice": [
+        "The Eldrich creatures",
+        "Water",
+        "Aliens have invaded us and will blow up the White House",
+        "At the rate that 2020 is going, Godzilla's egg has crashed landed into the ocean",
+    ]    
+    },
+    {
+        "question": "Why is there an Among Us porn?",
+        "answer": "It is 2020. All bets are off. And who doesn't want to wank off to some virtual creatures"
+        "id" : "4",
+        "multiple_choice": [
+        "Because it is the rule of the Internet",
+        "It is 2020. All bets are off. And who doesn't want to wank off to some virtual creatures",
+        "Horny humans are horny",
+        "Some of us have Imposter Syndrome and we get off on him having fun",
+    ]    
+    }
+];
