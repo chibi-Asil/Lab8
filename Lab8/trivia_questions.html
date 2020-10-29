@@ -4,52 +4,29 @@
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
-        <title>Trivia!</title>
+        <title>Heinous Questions</title>
         <!-- Include Jquery Version 3.5.1-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-        <!-- <script>
-        
-            // TODO: Add code to check answers to questions
-            // Documentation: https://www.codemahal.com/video/javascript-quiz-tutorial/
-            <script src="quiz.js">
-                div#test{
-                    border:#5AB029 3px solid;
-                    padding:15px 45px 45px 45px;
-                    background-color: #FCE3E5;
-                    width:55%;
-                    }
-           <script src = 'blank.js'>
-                div#test{
-                    border:#5AB029 3px solid;
-                    padding:15px 45px 45px 45px;
-                    background-color: #FCE3E5;
-                    width:55%;
-                    }
-        
-        </script> -->
-        <script src="quiz.js"></script>
-        <!-- Fix the errors in the file -->
-        <!-- <script src="blank.js"></script> -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="quiz.js"></script>
+            <script src="blank.js"></script>
     </head>
     <body>
 
         <div class="jumbotron">
-            <h1>Trivia! Night</h1>
+            <h1>Heinous Questions</h1>
         </div>
 
         <div class="container">
 
             <div class="section">
-                <h2>Part 1: How bad do you think this can go? </h2>
+                <h2>Part 1: How badly do you think this can go? </h2>
                 <hr>
 
                 <!-- TODO: Add multiple choice question here -->
                 <body>
                     <h3 id = "mc_test_status"></h3>
-                    <div id = "multiple_choice_test">
-                        
-                    </div>    
+                    <div id = "multiple_choice_test"></div>  
+                    <div id = "user_msg"></div>
                 </body>
 
             </div>
@@ -60,8 +37,10 @@
                 <!-- TODO: Add free response question here -->
                  <!-- You should use an input field to let the user type a response. -->
                  <body>
-                    <h3 id = "blank_test_status"></h3>
-                    <div id = "blank_test"></div>
+                    <h3>Play for your life mortal</h3>
+                    <div id = "blank_test" tabindex = "1"></div>
+                    <div id = "inputBox"></div>
+                    <div id = "user_msg"></div>
                  </body>
 
             </div>
