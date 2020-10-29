@@ -1,6 +1,6 @@
 // TO DO: Set up a JS File
 // Documentation help: http://www.flashbynight.com/tutes/blanks/
-(document).ready(function(){
+$(document).ready(function(){
 //  Set up initial variables in JavaScript code
 // Creation of the global variables for the quiz
     var blankQuestions = new Array; // This is for the array of fill-in the blanks for both answers and questions
@@ -9,22 +9,36 @@
     var number_Question;
     var questionPosition; // Is used to control the flow of the game
     var score;
+    var pos = 0;
+    var correct = 0;
+    var user_input = [];
+    var ch1; // Answer to question 1
+    var ch2; // Answer to question 2 
+    var ch3; // Answer to question 3
 
-// We will need to get data from our JSON file
-    $.getJSON('questions.json', function(questions){ 
-        number_Question = questions.Question_List.length;
-        for(i = 0; i < questions.Question_List; i++){ // The point is to loop thru the JSON elements within our question bank
-            typeArray = []; // Creating an empty and temporary two-dimensional array, we can store it in this. 
-            typeArray[0] = questions.Question_List[i].question;
-            typeArray[1] = questions.Question_List[i].response;
-            blankQuestions[i] = typeArray;
-        }
-        alert(blankQuestions) 
-        questionPositioin = 1;
-        resetQuestion();
-        update_question();
+// Creating the questions
+    var question_list = [{
+            "id": "1",
+            "blank_question" : "Monsieur Hood sings, 'I like an honest fight and a saucy little maid.' Merry Men sings, 'What he's basically saying is he likes to get...'",
+            "answer" : "laid",
+            "blank_box" :[] 
         
-    })
+        },
+        {
+            "id": "2",
+            "blank_question" : "What’s the difference between a Catholic priest and a zit?",
+            "answer" : "A zit will wait until you’re twelve before it comes on your face.",
+            "blank_box" : []
+            
+        },
+        {
+            "id": "3",
+            "blank_question" : "Although she lives with seven other men, she is not easy. Who is she?",
+            "answer" : "Snow White",
+            "blank_box" : []
+            
+        }
+    ];
     
     // Of course, we will need a loading page
     function part2_Question(){
@@ -33,7 +47,7 @@
         $("#blank_test").empty();
         $("#blank_test").append("<h3>Trust me, it can ALWAYS get worse. Prepare to give me your soul. </h3>");
         $("#blank_test").append("<p> Do you want to play a game? Type in your answer and then press ENTER:</p>");
-        $("blank_test").append('<p id = "wordBox"></p>');
+        $("#blank_test").append('<p id = "wordBox"></p>');
         $("#blank_test").append("<input type = 'text' id = 'inputBox'>");
         $("#blank_test").append("<div id = 'No need for a feedback></div>'");
         $$("#blank_test").append("<p id = 'Really. I don't want to hear your complaints. What is done is done.'></p>")
@@ -65,31 +79,50 @@
     $("#blank_test").on("click tap", function(){
         questionControl();
     })
-    function questionControl(){
-        switch (questionPosition){
-            case 1:
-                checkAnswer();
-                break;
-            case 2:
-                update_question();
-                break;
-            case 3:
-                scorePage();
-            case 4:
-                resetGame();
-                update_question();
-                break;
-        } //switch
+    // Will need to create a submit button that changes colour if the answer is correct or not
+    function changeButton(){
+        
     }
+    function hidden(){
+        
+    }
+    // This function should show the question for display on the page
+    function blank_question(){
+        blank_test = get("blank_test");
+        if(pos >= question_list.length){
+            if(pos >= question_list.length){
+            blank_test.innerHTML = "<h3> You got "+ correct+ " of " + question_list.length + "questions correct</h3>";
+            get("blank_test_status").innerHTML = "Part 2 is now completed. I guess you are almost free...but freedom is an illusion.";
+            pos = 0;
+            correct = 0;
+        // stops the rest of the showQuestion function from running when the test is done with
+            return false;
+        }
+        get("blank_test_status").innerHTML = "Question "+ (pos+1) + " of "+ question_list.length;
+        question_list = question_list[pos].question_list;
+        ch1 = question_list[pos].blank_box;
+        ch2 = question_list[pos].blank_box;
+        ch3 = question_list[pos].blank_box;
+    }
+
+    //display the question
+        blank_test.innerHTML= "<h3>" + question_list + "</h3>";
     
+    //Displaying the answer options
+        blank_test.innerHTML += "<label><input type = 'text' name = 'Answer' onclick = 'checkAnswer' value = 'text_1'>" + ch1 + "</label><br>";
+        blank_test.innerHTML += "<label><input type = 'text' name = 'Answer' onclick = 'checkAnswer' value = 'text_2'>" + ch2 + "</label><br>";
+        blank_test.innerHTML += "<label><input type = 'text' name = 'Answer' onclick = 'checkAnswer' value = 'text_3'>" + ch3 + "</label><br>";
+    }
     // We will need to create a checkAnswer function to ensure that we're doing it correctly
     function checkAnswer(){
         myAnswer = $("#inputBox").val();
-        if(myAnswer.slice(myAnswer.length-1, myAnswer.length== " "){
-            myAnswer = myAnswer.slice(0, myAnswer.length + 1);)}
+        if(myAnswer.slice(myAnswer.length - 1, myAnswer.length== " "){
+            myAnswer = myAnswer.slice(0, myAnswer.length + 1);
+        }
+        console.log(myAnswer);
         if(currentAnswer == myAnswer){
-            score++;
-            $("#feedback").append('<img src = https://images.app.goo.gl/Gm3Mo7HAakECMtgq7'>);
+             score++;
+            $("#feedback").append('<img src = https://images.app.goo.gl/Gm3Mo7HAakECMtgq7>');
             $("#inputBox").css("background-color", "white");
             $("#inputBox").css("color", "green");
         }
@@ -104,6 +137,7 @@
         $("#blank_test").focus();
         gamePosition = 2;
         if(currentQuestion == number_Question){gamePosition = 3;}
+    }
     
     // How did you do? Score Page
     function scorePage(){
@@ -116,4 +150,4 @@
     }
     
             
-}
+});
